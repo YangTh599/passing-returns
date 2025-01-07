@@ -1,0 +1,32 @@
+# Thayer Yang
+# 07 JAN 2025
+# Passing Returns in Functions
+
+from random import randint as r
+
+def rand_num():
+    num = r(1,26)
+    return num
+
+def get_user_input():
+    while True:
+        num = input("Enter a number:\n")
+        if num.isdigit():
+            return int(num)
+        else:
+            print("Error: Input is not an integer")
+
+def square_num(num):
+    return num**2
+
+random_number = rand_num()
+
+user_num = get_user_input()
+
+random_sq = square_num(random_number)
+user_sq = square_num(user_num)
+
+print(f"""Random Number: {random_number}
+Random Number Squared: {random_sq}
+User Number: {user_num}
+User Number Squared: {user_sq}""")
