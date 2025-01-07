@@ -17,6 +17,7 @@ def getLetter():
     return letter
 
 def seperateSentence(string):
+    counter = 0
     word = ''
     words = []
     for character in string:
@@ -25,6 +26,14 @@ def seperateSentence(string):
         else:
             words.append(word)
             word = ''
+        counter+=1
+    temp_word = ''
+    if counter == len(string):
+        for char in word:
+            if char.isalpha():
+                temp_word += char
+        words.append(temp_word)
+
 
     return words
 
@@ -36,17 +45,18 @@ letter = getLetter()
 words_of_letter = checkWords(words_in_sen,letter)
 
 print(f"Here are the words in your sentence that start with {letter}:\n{words_of_letter}")
-            
+
+# ----- TEST CODE -----
+# #Testing seperateSentence Function
 # list = seperateSentence("Wow this is a great function")
 
 # print(list)
 
+# #Testing getLetter function
 # let = getLetter()
 
 # print(let)
 
+# # test CheckWords function
 # letter_of_words = checkWords(["This","That","maybe","thor"],"t")
 # print(letter_of_words)
-
-# word = "Among Us"
-# print(word[0:2])
